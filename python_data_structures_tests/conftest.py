@@ -1,25 +1,24 @@
 import pytest
 
 
-@pytest.fixture()
-def list_params_fixture():
-    pass
+@pytest.fixture(params=[11, 12, 13, 14])
+def list_params_fixture(request):
+    return request.param
 
 
-@pytest.fixture()
-def set_params_fixture():
-    pass
+@pytest.fixture(params=[11, 12, 13, 14])
+def set_params_fixture(request):
+    return request.param
 
 
-@pytest.fixture()
-def dictionary_params_fixture():
-    pass
+@pytest.fixture(params=[{'g': 11}, {'g': 12}, {'g': 13}, {'g': 14}])
+def dictionary_params_fixture(request):
+    return request.param
 
 
-@pytest.fixture()
-def string_params_fixture():
-    pass
-
+@pytest.fixture(params=[11, 12, 13, 14])
+def string_params_fixture(request):
+    return request.param
 
 @pytest.fixture()
 def get_string_fixture():
@@ -33,7 +32,7 @@ def get_list_fixture():
 
 @pytest.fixture()
 def get_dictionary_fixture():
-    return {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+    return {'e': 5, 'c': 3, 'b': 2, 'd': 4, 'a': 1}
 
 
 @pytest.fixture()
